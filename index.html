@@ -2,70 +2,46 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo App</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div class="container">
-      <header class="header">
-        <img class="logo" src="./images/logo.svg" />
-      </header>
-      <main class="wrapper -content">
-        <div class="group -switch-tab">
-          <button class="button -tab -active">
-            <p class="text">Personal</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <link rel="stylesheet" href="index.css" />
+  >
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <img class="logo" src="./images/logo.svg" />
+    </header>
+    <main class="wrapper -content">
+      <div class="group -switch-tab">
+        <button class="button -personal -tab -active" onclick="switchStatusType(1)">
+          <p class="text">Personal</p>
+        </button>
+        <button class="button -professional -tab" onclick="switchStatusType(2)">
+          <p class="text">Professional</p>
+        </button>
+      </div>
+      <div class="add">
+        <input oninput="onInputSearch(event)" type="text" placeholder="What do you need to do?" class="input" />
+        <button type="button" onclick="addTodo()" disabled class="button -append">ADD</button>
+      </div>
+      <div class="container -todo">
+        <div class="list">
+        </div>
+        <div class="action">
+          <button class="button" onclick="clearAllCompletedTodo()">
+            <img src="./images/clear.svg" alt="clear icon" class="icon -clear" />
+            <p>Clear Completed</p>
           </button>
-          <button class="button -tab"><p class="text">Professional</p></button>
         </div>
-        <div class="search">
-          <input
-            type="text"
-            placeholder="What do you need to do?"
-            class="input"
-          />
-          <button class="button -append">ADD</button>
-        </div>
-        <div class="list -todo">
-          <div class="item -done">
-            <img src="./images/check.svg" alt="" class="icon -check" />
-            <p class="content"><s>Personal Work No. 1</s></p>
-            <img src="./images/delete.svg" alt="" class="icon -delete" />
-          </div>
-          <div class="item">
-            <img src="./images/circle.svg" alt="" class="icon -circle" />
-            <p class="content">Personal Work No. 2</p>
-            <img src="./images/delete.svg" alt="" class="icon -delete" />
-          </div>
-          <div class="item">
-            <img src="./images/circle.svg" alt="" class="icon -circle" />
-            <p class="content">Personal Work No. 3</p>
-            <img src="./images/delete.svg" alt="" class="icon -delete" />
-          </div>
-          <div class="item -done">
-            <img src="./images/check.svg" alt="" class="icon -check" />
-            <p class="content"><s>Personal Work No. 4</s></p>
-            <img src="./images/delete.svg" alt="" class="icon -delete" />
-          </div>
-          <div class="item">
-            <img src="./images/circle.svg" alt="" class="icon -circle" />
-            <p class="content">Personal Work No. 5</p>
-            <img src="./images/delete.svg" alt="" class="icon -delete" />
-          </div>
-          <div class="action">
-            <button class="button">
-              <img
-                src="./images/clear.svg"
-                alt="clear icon"
-                class="icon -clear"
-              />
-              <p>Clear Completed</p>
-            </button>
-          </div>
-        </div>
-      </main>
-    </div>
-  </body>
+      </div>
+
+    </main>
+  </div>
+</body>
+<script type="text/javascript" src="./script.js"></script
 </html>

@@ -54,8 +54,8 @@ border-bottom: 5px solid #D98326;
 color: #323232;
 }
 
-/* search */
-.search {
+/* Add */
+.add {
     display: flex;
     margin-top: 40px;
     height: 78px;
@@ -64,7 +64,7 @@ color: #323232;
     margin-inline: auto;
     justify-content: center;
 }
-.search > .input {
+.add > .input {
     background-color: #F1ECE6;
     padding-block: 15px;
     padding-left: 35px;
@@ -75,11 +75,11 @@ color: #323232;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
-.search > .input::placeholder {
+.add > .input::placeholder {
     color: #969696;
 }
 
-.search > .button.-append {
+.add > .button.-append {
     width: 140px;
     border: none;
     border-top-right-radius: 50px;
@@ -90,9 +90,20 @@ color: #323232;
     line-height: 58px;
     font-weight: 700;
     color: #F3F3F3;
+    transition: all 0.3s ease;
+}
+.add > .button:not(:disabled):hover,
+.add > .button:not(:disabled):focus-visible{
+    background-color: #66cccc;
+    outline: none;
 }
 
-.list.-todo {
+.add > .button.-append:disabled {
+    background-color: #cdcdcd;
+    cursor:not-allowed;
+}
+
+.container.-todo {
     max-width: 1040px;
     width: 100%;
     display: flex;
@@ -101,16 +112,16 @@ color: #323232;
     background: #F1ECE6;
     padding-left: 45px;
     padding-right: 50px;
-    margin: 40px auto 104px;
+    margin: 40px auto auto;
     
 }
-.list.-todo > .item {
+.container.-todo > .list > .item {
     display: flex;
     align-items: center;
     height: 88px;
     position: relative;
 }
-.list.-todo > .item::after {
+.container.-todo > .list > .item::after {
     content: '';
     width: calc(100% - 32px - 64px);
     left: 64px;
@@ -118,16 +129,17 @@ color: #323232;
     border-top: 1px solid #76B7CD;
     position: absolute;
 }
-.list.-todo > .item > .content {
+.container.-todo > .list > .item > .content {
     flex-grow: 1;    
     font-size: 32px;
     line-height: 48px;
 }
-.list.-todo > .item.-done > .content {
 
+.container.-todo > .list > .item.-done > .content {
+    text-decoration: line-through;
     color: #C2C2C2;
 }
-.list.-todo > .item > .icon {
+.container.-todo > .list > .item > .icon {
     cursor: pointer;
 }
 
@@ -136,7 +148,7 @@ color: #323232;
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
-    padding-right: 32px;
+    padding-right: 38px;
     margin-top: 78px;
 }
 .action > .button {
